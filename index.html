@@ -1,0 +1,235 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Mind Your Manners - Location Markers</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v3.2.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.2.0/mapbox-gl.js"></script>
+<style>
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+</style>
+</head>
+<body>
+<style>
+    .mapboxgl-popup {
+        max-width: 400px;
+        font:
+            12px/20px 'Helvetica Neue',
+            Arial,
+            Helvetica,
+            sans-serif;
+    }
+</style>
+<div id="map"></div>
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoibnVtM3IxYyIsImEiOiJjbHM2ZHI1N3kxM2JnMnJvMzNlcmRkMm9uIn0.2PD6TiGDtJXLl4AKjh6yZA';
+    const map = new mapboxgl.Map({
+        container: 'map',
+        // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+        style: 'mapbox://styles/num3r1c/cltayr29i014s01qpeb99g34z',
+        center: [-73.987, 40.763],
+        zoom: 11.64
+    });
+
+    map.on('load', () => {
+        map.addSource('places', {
+            // This GeoJSON contains features that include an "icon"
+            // property. The value of the "icon" property corresponds
+            // to an image in the Mapbox Streets style's sprite.
+            'type': 'geojson',
+            'data': {
+                'type': 'FeatureCollection',
+                'features': [
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Appreciation Input/Output</strong><p> After I held open the door, my classmate thanked me. Occured at 1:15pm on 2/20/24.</p>',
+                            'icon': 'rectangle-yellow-2'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-73.960980, 40.808214]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Appreciation Input</strong><p> My friend complimented me, so I thanked them. Occured at 1:32pm on 2/20/24.</p>',
+                            'icon': 'rectangle-yellow-2'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-73.960856, 40.808369]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Appreciation Output</strong><p> I overheard a classmate thanking their friend for finding their purse. Occurred at 3:00pm on 2/20/24.</p>',
+                            'icon': 'rectangle-yellow-2'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-73.961078, 40.808214]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Appreciation Input</strong><p> My friend complimented me, so I thanked them. Occured at 3:07pm on 2/20/24.</p>',
+                            'icon': 'rectangle-yellow-2'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-73.960919, 40.808253]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Appreciation Output</strong><p> My friend asked to borrow my pen, so I let them. Occurred at 4:00pm on 2/20/24.</p>',
+                            'icon': 'rectangle-yellow-2'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-73.960794, 40.808402]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Appreciation Input</strong><p> I thanked my Lyft driver after arriving at my destination. Occurred at 5:35pm on 2/20/24.</p>',
+                            'icon': 'rectangle-yellow-2'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-74.013273, 40.702747]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Appreciation Input/Output</strong><p> I thanked my Grubhub delivery person for bringing me my food order. Occurred at 6:45pm on 2/20/24.</p>',
+                            'icon': 'rectangle-yellow-2'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-74.013527, 40.702792]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Appreciation Output</strong><p>My professor thanked me for submitting my assignment on time. Occurred at 10:00am on 2/21/24.</p>',
+                            'icon': 'rectangle-yellow-2'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-73.961404, 40.807687]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Appreciation Input/Output</strong><p>I overheard my classmate thank their friend for bringing them lunch. Occurred at 1:25pm on 2/21/24.</p>',
+                            'icon': 'rectangle-yellow-2'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-73.960865, 40.808223]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Appreciation Input/Output</strong><p>I thanked my Lyft driver after arriving at my destination. Occurred at 10:50am on 2/22/24.</p>',
+                            'icon': 'rectangle-yellow-2'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-73.963212, 40.808829]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Appreciation Input/Output</strong><p>I held the door open for my classmate as I was leaving Buell. Occurred at 12:05pm on 2/22/24.</p>',
+                            'icon': 'rectangle-yellow-2'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-73.961363, 40.807816]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Appreciation Input/Output</strong><p>I thanked my Grubhub delivery person for bringing me my food order. Occurred at 5:30pm on 2/22/24.</p>',
+                            'icon': 'rectangle-yellow-2'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-74.013224, 40.702662]
+                        }
+                    }
+                ]
+            }
+        });
+        // Add a layer showing the places.
+        map.addLayer({
+            'id': 'places',
+            'type': 'symbol',
+            'source': 'places',
+            'layout': {
+                'icon-image': ['get', 'icon'],
+                'icon-allow-overlap': true
+            }
+        });
+
+        // When a click event occurs on a feature in the places layer, open a popup at the
+        // location of the feature, with description HTML from its properties.
+        map.on('click', 'places', (e) => {
+            // Copy coordinates array.
+            const coordinates = e.features[0].geometry.coordinates.slice();
+            const description = e.features[0].properties.description;
+
+            // Ensure that if the map is zoomed out such that multiple
+            // copies of the feature are visible, the popup appears
+            // over the copy being pointed to.
+            while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+            }
+
+            new mapboxgl.Popup()
+                .setLngLat(coordinates)
+                .setHTML(description)
+                .addTo(map);
+        });
+
+        // Change the cursor to a pointer when the mouse is over the places layer.
+        map.on('mouseenter', 'places', () => {
+            map.getCanvas().style.cursor = 'pointer';
+        });
+
+        // Change it back to a pointer when it leaves.
+        map.on('mouseleave', 'places', () => {
+            map.getCanvas().style.cursor = '';
+        });
+    });
+</script>
+
+</body>
+</html>
